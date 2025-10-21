@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPTUNE - Techno DJ</title>
+
+    <!-- Custom Stylesheets by FelixTheWebDev -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="teaser.css">
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+    <script src="nextgigs-script.js"></script>
+
+    <!-- <script src="./components/nextGigs/ticketButton.js" type="module"></script> -->
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?&family=RocknRoll+One" rel="stylesheet">
+    <!-- https://www.flaticon.com/search?word=email -->
+    <!-- <base href="/Website-Neptune/"> -->
+</head>
+<script>
+    window.addEventListener("scroll", () => {
+        const headerBox = document.getElementById("header-box");
+        const scrollButtons = document.querySelector(".scroll-buttons");
+        const languageToggle = document.getElementsByClassName("language-toggle")[0];
+
+        const triggerPoint = headerBox.offsetTop + headerBox.offsetHeight;
+
+        if (window.scrollY > triggerPoint) {
+            scrollButtons.classList.add("scroll-buttons--sticky");
+            languageToggle.classList.remove("hidden");
+        } else {
+            scrollButtons.classList.remove("scroll-buttons--sticky");
+            languageToggle.classList.add("hidden");
+
+        }
+    });
+</script>
+
+<body>
+    <!-- Dark/Lightmode Toggle -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+        <div class="icon sun"></div>
+        <div class="icon moon"></div>
+    </button>
+
+    <!-- Headerbereich mit Bild-Slider -->
+    <header>
+        <div class="slider">
+            <div class="slides">
+                <img src="images/a-min.jpg" alt="Slide 1">
+                <img src="images/b-min.jpg" alt="Slide 2">
+                <img src="images/c-min.jpg" alt="Slide 3">
+                <img src="images/d-min.jpeg" alt="Slide 4">
+                <img src="images/e-min.jpeg" alt="Slide 5">
+                <img src="images/f-min.jpeg" alt="Slide 6">
+            </div>
+        </div>
+
+        <div id="header-box">
+            <img src="images/neptune_logo-min.png" alt="NEPTUNE Logo" class="logo">
+        </div>
+
+        <div class="scroll-buttons">
+            <!-- <button onclick="scrollToSection('next-gigs')">NEXT GIGS</button> -->
+            <button onclick="scrollToSection('about-me')">GET IN TOUCH</button>
+            <div class="language-toggle hidden">
+                <button onclick="toggleBio('de')"></button>
+                <button onclick="toggleBio('en')"></button>
+            </div>
+            <!-- <button class="icon-only" onclick="scrollToSection('artist-gallery')">
+                <img src="icons/image-gallery.png" alt="Gallery" class="gallery-icon">
+            </button> -->
+        </div>
+    </header>
+
+
+
+
+
+    <!-- Next Gigs -->
+    <section id="next-gigs" class="mypattern">
+        <h2 class="headline">UPCOMING GIGS</h2>
+        <hr class="media-divider">
+
+        <div class="gig-list">
+            <!-- Gig # 1 -->
+            <div class="gig" data-date="2025-05-28">
+                <div class="date">
+                    <span>28</span>
+                    <span>MAI</span>
+                    <span>2025</span>
+                </div>
+                <div class="info">
+                    <h3>Affenkäfig</h3>
+                    <p>Saarbrücken</p>
+                    <a class="ticket-button" target="_blank" href="https://www.ticketseite.de/frankfurt">
+                        Get Tickets
+                    </a>
+                </div>
+            </div>
+
+            <!-- Gig # 2 -->
+            <div class="gig" data-date="2025-06-08">
+                <div class="date">
+                    <span>08</span>
+                    <span>JUNI</span>
+                    <span>2025</span>
+                </div>
+                <div class="info">
+                    <h3>Ikarus Festival</h3>
+                    <p>Memmingen</p>
+                    <a class="ticket-button" target="_blank" href="https://www.ticketseite.de/frankfurt">
+                        Get Tickets
+                    </a>
+                </div>
+            </div>
+
+            <!-- Gig # 4 -->
+            <div class="gig" data-date="2025-06-18">
+                <div class="date">
+                    <span>18</span>
+                    <span>JUNI</span>
+                    <span>2025</span>
+                </div>
+                <div class="info">
+                    <h3>Cocomo</h3>
+                    <p>Ulm</p>
+                    <a class="ticket-button" target="_blank" href="https://www.ticketseite.de/frankfurt">
+                        Get Tickets
+                    </a>
+                </div>
+            </div>
+
+            <!-- Gig # 5 -->
+            <div class="gig" data-date="2025-06-21">
+                <div class="date">
+                    <span>21</span>
+                    <span>JUNI</span>
+                    <span>2025</span>
+                </div>
+                <div class="info">
+                    <h3>Buchbusch Festival</h3>
+                    <p>Pforzheim</p>
+                    <a class="ticket-button" target="_blank" href="https://buchbusch.de/tickets/">
+                        Get Tickets
+                    </a>
+                </div>
+            </div>
+
+            <!-- Gig # 6 -->
+            <div class="gig" data-date="2025-06-28">
+                <div class="date">
+                    <span>28</span>
+                    <span>JUNI</span>
+                    <span>2025</span>
+                </div>
+                <div class="info">
+                    <h3>Airpark Festival</h3>
+                    <p>Baden Baden</p>
+                    <a class="ticket-button" target="_blank" href="https://www.ticketseite.de/frankfurt">
+                        Get Tickets
+                    </a>
+                </div>
+            </div>
+
+            <!-- Gig # 7 -->
+            <div class="gig" data-date="2025-07-27">
+                <div class="date">
+                    <span>27</span>
+                    <span>JULI</span>
+                    <span>2025</span>
+                </div>
+                <div class="info">
+                    <h3>Zamanand</h3>
+                    <p>München</p>
+                    <a class="ticket-button" target="_blank" href="https://www.ticketseite.de/frankfurt">
+                        Get Tickets
+                    </a>
+                </div>
+            </div>
+
+            <!-- Gig # 8 -->
+            <div class="gig" data-date="2025-08-30">
+                <div class="date">
+                    <span>30</span>
+                    <span>AUG</span>
+                    <span>2025</span>
+                </div>
+                <div class="info">
+                    <h3>Disco to Techno</h3>
+                    <p>Eberhards</p>
+                    <a class="ticket-button" target="_blank" href="https://www.ticketseite.de/frankfurt">
+                        Get Tickets
+                    </a>
+                </div>
+            </div>
+
+            <!-- Gig #9 -->
+            <div class="gig" data-date="2025-10-02">
+                <div class="date">
+                    <span>02</span>
+                    <span>OKT</span>
+                    <span>2025</span>
+                </div>
+                <div class="info">
+                    <h3>Bootsparty</h3>
+                    <p>Stuttgart</p>
+                    <a class="ticket-button" target="_blank" href="https://www.ticketseite.de/frankfurt">
+                        Get Tickets
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="fade-overlay"></div>
+        <button class="more-events">SHOW MORE</button>
+    </section>
+
+
+
+
+    <!-- Bereich für die Künstlerbeschreibung und Social Media Links -->
+    <!-- About Me -->
+    <section id="about-me">
+        <h2 class="headline" style="color:#000">GET IN TOUCH!</h2>
+        <hr class="media-divider" style="filter:invert(0)">
+
+        <div class="about">
+            <div class="about-image">
+                <img src="images/5-min.png" alt="NEPTUNE DJ" />
+            </div>
+
+            <div class="about-text">
+                <!-- Social Media Icons -->
+                <div class="social-icons social-arc">
+                    <a href="https://soundcloud.com/neptune-techno-dj" target="_blank">
+                        <img src="icons/soundcloud.png" alt="SoundCloud" />
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCW71GVV-CShJeq3bGjmQKrw" target="_blank">
+                        <img src="icons/youtube.png" alt="YouTube" />
+                    </a>
+                    <a href="https://www.instagram.com/neptunetechnodj/" target="_blank">
+                        <img src="icons/instagram.png" alt="Instagram" />
+                    </a>
+                    <a href="mailto:kontakt@neptune.dj" target="_blank">
+                        <img src="icons/email.png" alt="E-Mail" />
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Press Kit -->
+    <section class="presskit">
+
+        <div class="presskit-inner">
+            <h2 class="headline">Electronic Press Kit</h2>
+            <hr class="media-divider">
+            <div class="presskit-contact">
+
+                <!-- <img src="images/545.jpg" alt="NEPTUNE DJ Portrait" class="neptune-contact-image" /> -->
+
+            </div>
+
+            <div id="bio-de" class="bio">
+                <div class="flex">
+                    <h3>Biografie</h3>
+                </div>
+                <p>NEPTUNE ist ein aufstrebender DJ aus Offenburg (GER), der sich innerhalb kürzester Zeit durch
+                    seine
+                    kraftvollen Sets und lebhafte Bühnenpräsenz einen festen Platz in der Technoszene erspielt hat.
+                    Erlebte er noch im Dezember 2023 seine Feuertaufe als DJ in einem großen Club in seiner Region,
+                    kann
+                    er mittlerweile auf zahlreiche weitere Auftritte zurückblicken. Hierbei begeisterte er
+                    zahlreiche
+                    Raver in Clubs wie Universal DOG, Halle02, Proton The Club, A8 Discoplex, Hans Bunte Areal,
+                    Basement
+                    The Club und Festivals wie dem LOA Festival in Luxembourg und dem Ikarus Festival in Memmingen.
+                    Er
+                    hat sich bereits Line-ups mit Artists wie Anxhela, Nusha, Armin van Buuren, Johannes Schuster,
+                    Format B, A.D.H.S., Boris Brejcha, Deborah de Luca, Holy Priest, I Hate Models, Chris Liebing,
+                    A.N.I., Fenrick, CUDI und Vini Vici geteilt. Seine auffällige Bühnenpräsenz, bei der er seine
+                    Begeisterung für Techno regelmäßig „raustanzt“, macht ihn einzigartig und steckt jeden Zuhörer
+                    im
+                    Publikum an, mit ihm zu feiern. Die Musik des 24-jährigen zeichnet sich stets durch einen
+                    kraftvollen, treibenden Bass gepaart mit epischen Melodien und Vocals aus, welche ein absoluter
+                    Genuss auf großen Soundanlagen sind und stets ein abwechslungsreiches, geladenes Set
+                    versprechen.
+                    Mit ungebrochenem Enthusiasmus und einer unaufhaltsamen Entwicklung ist NEPTUNE bereit, die
+                    Techno-Szene zu erobern und neue Maßstäbe zu setzen. Seine Liebe zur elektronischen Musik und
+                    sein
+                    Engagement machen ihn zu einem aufstrebenden Künstler, den man im Auge behalten sollte.Also
+                    lasst
+                    uns zusammen eine unvergessliche Party mit ihm haben! </p>
+            </div>
+            <div id="bio-en" class="bio hidden">
+                <div class="flex">
+                    <h3>Biography</h3>
+                </div>
+                <p>NEPTUNE is a rising DJ from Offenburg (GER) who has quickly made a name for himself in the techno
+                    scene with his powerful sets and electrifying stage presence. After making his club debut in
+                    December 2023, he has since performed at numerous venues, electrifying ravers at clubs like
+                    Universal DOG, Halle02, Proton The Club, A8 Discoplex, Hans Bunte Areal, Basement The Club, and
+                    festivals such as LOA Festival in Luxembourg and Ikarus Festival in Memmingen.He has already
+                    shared line-ups with artists like Anxhela, Nusha, Armin van Buuren, Johannes Schuster, Format B,
+                    A.D.H.S., Boris Brejcha, Deborah de Luca, Holy Priest, I Hate Models, Chris Liebing, A.N.I.,
+                    Fenrick, CUDI, and Vini Vici. His intense stage presence, where he literally dances out his
+                    passion for techno, makes him stand out and spreads contagious energy to every crowd.The
+                    24-year-old is known for his powerful, driving basslines combined with epic melodies and vocals,
+                    creating an absolute sonic delight on massive sound systems while delivering a dynamic and
+                    high-energy set.With unstoppable enthusiasm and continuous growth, NEPTUNE is ready to take over
+                    the techno scene and set new standards. His deep passion for electronic music and relentless
+                    dedication make him an artist to watch.So let’s create an unforgettable party with him!</p>
+            </div>
+
+            <!-- <div class="contact bio">
+
+                <h3>Technischer Rider</h3>
+
+                <div class="rider-grid">
+                    <div class="gear-card">
+                        <img src="images/cdj3000.png" alt="CDJ-3000" class="gear-img">
+                        <div class="gear-info">
+                            <div class="gear-title">Pioneer CDJ-3000</div>
+                        </div>
+                        <div class="tooltip">
+                            Topaktueller Profi-Mediaplayer mit Firmware auf neuestem Stand. Alternativ: CDJ-2000NXS2
+                            möglich.
+                        </div>
+                    </div>
+
+                    <div class="gear-card">
+                        <img src="images/djm-v10.png" alt="DJM-V10" class="gear-img">
+                        <div class="gear-info">
+                            <div class="gear-title">Pioneer DJM-V10</div>
+                        </div>
+                        <div class="tooltip">
+                            6-Kanal-Mixer mit voller Effektkontrolle und High-End-Sound – auch DJM-A9 oder
+                            DJM-900NXS2
+                            kompatibel.
+                        </div>
+                    </div>
+
+                    <div class="gear-card">
+                        <img src="images/cdj2000nxs2.png" alt="CDJ-2000NXS2" class="gear-img">
+                        <div class="gear-info">
+                            <div class="gear-title">Pioneer CDJ-2000NXS2</div>
+                        </div>
+                        <div class="tooltip">
+                            Alternative zum CDJ-3000 – Industriestandard weltweit. Stets geprüft & voll
+                            funktionsfähig.
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+
+
+
+    <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-f2ac5821-f7dc-4051-a9cc-400588dffd89" data-elfsight-app-lazy></div>
+
+
+
+    <section id="media">
+        <h2 class="headline">IMPRESSIONEN</h2>
+        <hr class="media-divider">
+
+        <!-- YOUTUBE SECTION -->
+        <h3 class="media-subheadline">🎬 YouTube Sets</h3>
+        <div class="media-grid youtube-video-grid">
+            <div class="media-item">
+                <a href="https://www.youtube.com/watch?v=60yAloRtw30" target="_blank">
+                    <div class="media-item youtube-wrapper" data-id="60yAloRtw30">
+                        <div class="youtube-thumbnail">
+                            <img src="https://ugc.production.linktr.ee/2b60abff-7e68-4ed9-92f0-841dcd1d176b_IMG-1706.png?io=true&size=thumbnail-feature-v1_0"
+                                alt="Video Thumbnail">
+                            <div class="play-button">&#9658;</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="media-item youtube-video">
+                <a href="https://youtu.be/nM3GtJj3rvk?si=7jiRb99AYqbdpq6d" target="_blank">
+                    <div class="media-item youtube-wrapper" data-id="60yAloRtw30">
+                        <div class="youtube-thumbnail">
+                            <img src="https://ugc.production.linktr.ee/c31ce773-c9f9-46ac-98fd-8a4d2867ed76_maxresdefault.webp?io=true&size=thumbnail-feature-v1_0"
+                                alt="Video Thumbnail">
+                            <div class="play-button">&#9658;</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Umbruch/Trennung -->
+        <hr class="media-divider" style="margin-top:3rem">
+
+        <!-- SOUNDCLOUD SECTION -->
+        <h3 class="media-subheadline">🔊 SoundCloud Sets</h3>
+        <div class="media-grid">
+            <div class="media-item soundcloud">
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/neptune-techno-dj/pulse-techno-music-podcast-15-live-blockhaus-haslach&color=%23000000">
+                </iframe>
+            </div>
+
+            <div class="media-item soundcloud">
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/neptune-techno-dj/sets/pulse-techno-music-podcast&color=%23000000">
+                </iframe>
+            </div>
+
+            <div class="media-item soundcloud">
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/neptune-techno-dj/hard-techno-trance-set&color=%23000000">
+                </iframe>
+            </div>
+        </div>
+
+
+
+        <hr class="media-divider" style="margin-top:3rem">
+        <h3 class="media-subheadline">🖼️ Bilder</h3>
+        <!-- Artist Image Section -->
+        <section id="artist-gallery">
+            <div class="image-grid">
+                <!-- <img src="images/16.jpg" alt="NEPTUNE Live Shot 1" /> -->
+                <!-- <img src="images/84.jpg" alt="NEPTUNE Live Shot 3" /> -->
+                <img src="images/11-min.jpeg" alt="NEPTUNE Live Shot 4" />
+                <img src="images/22-min.jpeg" alt="NEPTUNE Live Shot 2" />
+                <img src="images/41.jpg" alt="NEPTUNE Live Shot 5" />
+                <img src="images/9.jpg" alt="NEPTUNE Live Shot 6" />
+            </div>
+        </section>
+        <!-- Lightbox Overlay -->
+        <div id="lightbox" class="hidden">
+            <span id="lightbox-close">&times;</span>
+            <img id="lightbox-img" src="" alt="Expanded View" />
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-title">DJ NEPTUNE</p>
+
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <p>Im Stecket 4, 77855 Achern (GER)</p>
+                    <p><strong>Mobil:</strong> 0175 1482000</p>
+                    <p><strong>E-Mail:</strong>
+                        <a href="mailto:info@neptunetechnodj.de">info@neptunetechnodj.de</a>
+                    </p>
+                </div>
+
+                <nav class="footer-section footer-nav">
+                    <!-- <h3>Links</h3> -->
+                    <a href="/presskit" class="footer-link">Presskit</a>
+                    <a href="/impressum.html" class="footer-link">Impressum</a>
+                </nav>
+            </div>
+
+            <small class="footer-copy">&copy; 2025 Neptune. All rights reserved.</small>
+        </div>
+    </footer>
+
+
+    <script>
+        function toggleBio(lang) {
+            document.getElementById('bio-de').classList.add('hidden');
+            document.getElementById('bio-en').classList.add('hidden');
+            document.getElementById('bio-' + lang).classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>
