@@ -5,22 +5,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Neptune — Techno DJ</title>
   <meta name="description" content="Driving grooves, moonlit sets and analog fury.">
-  <link rel="stylesheet" href="css/01-variables.css">
-  <link rel="stylesheet" href="css/02-base.css">
-  <link rel="stylesheet" href="css/03-layout.css">
-  <link rel="stylesheet" href="css/04-components.css">
-  <link rel="stylesheet" href="css/05-utilities.css">
+  
+  <!-- Nur diese eine CSS-Datei einbinden -->
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <header class="header container">
-    <nav class="nav">
+
+  <header class="container">
+    <nav>
       <div class="brand">NEPTUNE</div>
-      <div>
-        <button class="btn ghost small" onclick="toggleTheme()">Toggle</button>
-      </div>
+      <button class="btn ghost" onclick="toggleTheme()">Toggle</button>
     </nav>
   </header>
-  <main class="container main">
+
+  <main class="container">
     <section class="hero">
       <div>
         <p class="kicker">Analog · Dark · Raw</p>
@@ -32,18 +30,19 @@
         </div>
       </div>
     </section>
+
     <section id="gallery" class="gallery mt-2">
       <img src="media/sample1.jpg" alt="DJ Neptune live" loading="lazy">
       <img src="media/sample2.jpg" alt="Crowd" loading="lazy">
       <img src="media/sample3.jpg" alt="Lights" loading="lazy">
     </section>
   </main>
-  <footer class="footer container">
-    <div class="flex-between">
-      <span>© Neptune 2026</span>
-      <span>Built for the rave.</span>
-    </div>
+
+  <footer class="container">
+    <span>© Neptune 2026</span>
+    <span>Built for the rave.</span>
   </footer>
+
   <script src="js/theme-toggle.js"></script>
 </body>
 </html>

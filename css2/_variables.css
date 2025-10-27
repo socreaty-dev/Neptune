@@ -1,0 +1,37 @@
+/*───────────────────────────────────────────────
+ 🎨 01. VARIABLES — Theme & globale Settings
+───────────────────────────────────────────────
+ Enthält ALLE globalen Variablen:
+  • Farben für Dark + Light Mode
+  • Typografie & Radius
+  • Transitions & Effekte
+
+🌓 Der Dark Mode ist Standard.
+───────────────────────────────────────────────*/
+
+:root {
+  /*── FONT & BASE SETTINGS ─────────────────────*/
+  --font-base: 'Inter', system-ui, sans-serif;
+  --radius: 1rem;
+  --transition: 0.3s ease;
+
+  /*── COLORS (DARK THEME DEFAULT) ──────────────*/
+  --bg: #0b0b0d;              /* Haupt-Hintergrund */
+  --panel: #121218;           /* Panels, Header, Footer */
+  --text: #e8f0fa;            /* Primärtext */
+  --muted: #8a8f9a;           /* Sekundärtext / Dezent */
+  --accent: #ff4300;          /* Hauptakzent (z. B. Buttons) */
+  --accent-2: #00caff;        /* Zweitakzent (z. B. Links) */
+  --glow: 0 0 10px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+/*── LIGHT THEME ───────────────────────────────*/
+:root[data-theme='light'] {
+  --bg: #fafbff;
+  --panel: #ffffff;
+  --text: #0c0c12;
+  --muted: #555b66;
+  --accent: #ff3b00;
+  --accent-2: #009cd9;
+  --glow: 0 0 6px color-mix(in srgb, var(--accent-2) 60%, transparent);
+}

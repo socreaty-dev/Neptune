@@ -1,0 +1,17 @@
+/*───────────────────────────────────────────────
+ 🌑 NEPTUNE CSS FRAMEWORK
+───────────────────────────────────────────────
+ Struktur:
+  01. Variables   → Farben, Typo, Theme (Dark/Light)
+  02. Base        → Grundelemente & Reset
+  03. Layout      → Container, Header, Footer
+  04. Components  → Buttons, Hero, Gallery etc.
+  05. Helpers     → Kleine Utilities
+───────────────────────────────────────────────*/
+
+/* Importiere alles zentral — nur diese Datei kommt ins HTML */
+@import url('_variables.css');
+@import url('_base.css');
+@import url('_layout.css');
+@import url('_components.css');
+@import url('_helpers.css');
