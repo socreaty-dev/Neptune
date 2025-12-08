@@ -6,6 +6,8 @@
   flex-direction: column;
   justify-content: flex-start;
 
+  margin: 1rem;
+
   gap: 0.1rem;
   padding-top: 2rem;
   padding-bottom: 1rem;
