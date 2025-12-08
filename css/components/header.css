@@ -38,6 +38,7 @@ header div {
   justify-content:center;
   align-items: center;
   text-align: center;
+  transform:  translateY(-800px);
 
 }
 
@@ -85,7 +86,7 @@ header button {
   color: var(--accent-primary);
   border-radius: 0;
 
-  transform: rotate(2deg), translateY(-550px);
+  transform: rotate(2deg);
   overflow: hidden;
 
   transition: all var(--transition-fast);
