@@ -24,7 +24,7 @@
   right: 0;
   bottom: -350px;  /* Bild künstlich nach unten erweitern */
   height: 650px;   /* gleiche Höhe */
-  background: url("../media/img/84.jpg") center/cover no-repeat;
+  background: url("../../media/img/84.jpg") center/cover no-repeat;
   pointer-events: none; 
   z-index: -1;
 }
