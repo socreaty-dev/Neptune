@@ -12,8 +12,8 @@
   text-align: center;
   color: white;
 
-  /* Basis Hintergrund */
-  background: url("../../media/img/84.jpg") center/contain no-repeat;
+  /* Basis Hintergrund test*/
+  background: url("../../../media/img/84.jpg") center/contain no-repeat;
 }
 
 /* Bild 250px nach unten verlängern */
@@ -23,8 +23,8 @@
   left: 0;
   right: 0;
   bottom: -350px;  /* Bild künstlich nach unten erweitern */
-  height: 650px;   /* gleiche Höhe */
-  background: url("../../media/img/84.jpg") center/cover no-repeat;
+  height: 650px;   /* gleiche Höhe 22 test*/
+  background: url("../../../media/img/84.jpg") center/cover no-repeat;
   pointer-events: none; 
   z-index: -1;
 }
