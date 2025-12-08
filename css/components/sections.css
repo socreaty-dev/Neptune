@@ -1,0 +1,23 @@
+/* sections.css
+   Scroll-snap full viewport sections for immediate Vollbild-Springen
+*/
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-snap-type: y mandatory; /* Vollbild Snap */
+  overflow-y: auto;
+}
+
+section, header {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: block;
+}
+
+/* Optional: sanfte transition beim Sichtbar-werden */
+section { transition: opacity 420ms cubic-bezier(.2,.9,.2,1), transform 500ms ease; opacity: 0.01; transform: translateY(6vh); }
+section.in-view { opacity: 1; transform: translateY(0); }

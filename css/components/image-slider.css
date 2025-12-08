@@ -1,0 +1,67 @@
+/* image-slider.css
+   Fancy 3D slider with parallax hover, big bold captions.
+*/
+.image-slider-section { padding: 80px 0; background: linear-gradient(180deg,#050505,#0a0a0a); }
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  max-width:1200px;
+  margin: 0 auto;
+  overflow: visible;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 24px;
+}
+
+.image-slider .slide {
+  width: 720px;
+  height: 420px;
+  border-radius: 16px;
+  overflow:hidden;
+  position:relative;
+  transform-origin:center;
+  transition: transform 600ms cubic-bezier(.2,.9,.2,1), filter .4s ease;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+.image-slider .slide img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.image-slider .slide:not(.active) { transform: scale(.86) translateY(12px); filter: saturate(.8) contrast(.9) brightness(.88) blur(.2px); opacity:.92; }
+.image-slider .slide.active { transform: scale(1) translateY(0); filter: none; opacity:1; z-index:3; }
+
+/* caption */
+.slide-caption {
+  position:absolute;
+  left: 20px;
+  bottom: 18px;
+  font-weight:700;
+  font-size:16px;
+  letter-spacing:1px;
+  color:#fff;
+  background: rgba(0,0,0,0.28);
+  padding:8px 12px;
+  border-radius:8px;
+  backdrop-filter: blur(4px);
+}
+
+/* nav buttons */
+.slider-prev, .slider-next {
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  color:#fff;
+  width:46px; height:46px; border-radius:10px;
+  display:grid; place-items:center; cursor:pointer; z-index:5;
+}
+.slider-prev { left: -60px; }
+.slider-next { right: -60px; }
+
+/* mobile */
+@media (max-width:900px){
+  .image-slider .slide { width: 92%; height: 320px; }
+  .slider-prev, .slider-next { display:none; }
+}

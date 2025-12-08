@@ -1,0 +1,424 @@
+/* techno-components.css
+   Hardtechno Animation Pack - COMPLETE
+   --------------------------------------
+   - Modular theme variables (use <html data-theme="name"> or body[data-theme])
+   - Theme presets (10)
+   - Effect classes: glitch, laser-section, frequency-bars, neon, strobe, parallax, scanlines, noise, chroma, grid
+   - Font variables (switchable)
+   - Clean, well-commented and production-ready
+
+   Usage:
+     - Include this file after your main.css
+     - Use <html data-theme="dark-void"> to set a theme (see presets below)
+     - Use .glitch, .laser-section, .frequency-bars, .neon, .strobe, .parallax-video, .scanlines, .noise, .chroma, .techno-grid
+     - Use the control-panel JS to switch themes & fonts (JS will toggle html[data-theme] and --font-techno)
+*/
+
+/* =============================
+   0. GLOBAL VARIABLES & FONTS
+   ============================= */
+:root {
+  /* base colors (can be overwritten per theme) */
+  --techno-primary: #00fff2;
+  --techno-secondary: #00b8ff;
+  --techno-accent: #ff00d6;
+  --techno-dark: #020202;
+  --techno-muted: #1b1b1b;
+
+  /* animation durations */
+  --tempo-fast: 120ms;
+  --tempo-mid: 300ms;
+  --tempo-slow: 900ms;
+
+  /* fonts (font-family names only; load fonts in HTML) */
+  --font-techno: 'Orbitron', sans-serif;
+  --font-alt: 'Oxanium', sans-serif;
+
+  /* effects */
+  --glitch-strength: 2px;
+  --laser-height: 3px;
+  --grid-gutter: 80px;
+  --neon-glow-size: 14px;
+
+  /* general layout */
+  --panel-width: 320px;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--techno-dark);
+  color: #eaeaea;
+  font-family: var(--font-techno);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Standard section layout used by demo */
+.section-block {
+  min-height: 100vh;
+  padding: 6rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.demo-box {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+}
+
+/* =============================
+   1. THEME PRESETS
+   Usage: <html data-theme="neon-cyberwave"> ...
+   ============================= */
+
+/* helper: set default theme to dark-void */
+html[data-theme="dark-void"] {
+  --techno-primary: #00fff2;
+  --techno-secondary: #00b8ff;
+  --techno-accent: #9bff00;
+  --techno-dark: #030303;
+  --neon-glow-color: var(--techno-primary);
+  --bg-noise-opacity: 0.05;
+}
+
+html[data-theme="futuristic-chrome"] {
+  --techno-primary: #cfefff;
+  --techno-secondary: #b8ffd9;
+  --techno-accent: #ffd6a5;
+  --techno-dark: linear-gradient(180deg, #0b0f12 0%, #0f1417 100%);
+  --neon-glow-color: #cfefff;
+  --bg-noise-opacity: 0.02;
+}
+
+html[data-theme="industrial-rust"] {
+  --techno-primary: #ff7a00;
+  --techno-secondary: #b44a00;
+  --techno-accent: #ffd6a5;
+  --techno-dark: linear-gradient(180deg, #080705 0%, #1c1610 100%);
+  --neon-glow-color: #ff7a00;
+  --bg-noise-opacity: 0.12;
+}
+
+html[data-theme="neon-cyberwave"] {
+  --techno-primary: #00f0ff;
+  --techno-secondary: #ff00c8;
+  --techno-accent: #7cff00;
+  --techno-dark: linear-gradient(180deg, #04020a 0%, #0c0012 100%);
+  --neon-glow-color: #00f0ff;
+  --bg-noise-opacity: 0.06;
+}
+
+html[data-theme="rave-acid"] {
+  --techno-primary: #f7ff00;
+  --techno-secondary: #ff00a8;
+  --techno-accent: #00ff6a;
+  --techno-dark: #050505;
+  --neon-glow-color: #f7ff00;
+  --bg-noise-opacity: 0.09;
+}
+
+html[data-theme="digital-matrix"] {
+  --techno-primary: #00ff47;
+  --techno-secondary: #00d384;
+  --techno-accent: #dbe600;
+  --techno-dark: #020402;
+  --neon-glow-color: #00ff47;
+  --bg-noise-opacity: 0.03;
+}
+
+html[data-theme="psycho-techno"] {
+  --techno-primary: #ff4dff;
+  --techno-secondary: #00ffd5;
+  --techno-accent: #ffd800;
+  --techno-dark: #0a0010;
+  --neon-glow-color: #ff4dff;
+  --bg-noise-opacity: 0.08;
+}
+
+html[data-theme="warehouse-techno"] {
+  --techno-primary: #9be3ff;
+  --techno-secondary: #6bd2ff;
+  --techno-accent: #ffd6c2;
+  --techno-dark: #0b0b0b;
+  --neon-glow-color: #9be3ff;
+  --bg-noise-opacity: 0.14;
+}
+
+html[data-theme="void-pulse"] {
+  --techno-primary: #ffffff;
+  --techno-secondary: #bdbdbd;
+  --techno-accent: #888;
+  --techno-dark: #000000;
+  --neon-glow-color: #ffffff;
+  --bg-noise-opacity: 0.02;
+}
+
+html[data-theme="circuit-grid"] {
+  --techno-primary: #58f5ff;
+  --techno-secondary: #a8ffdf;
+  --techno-accent: #ffd3a6;
+  --techno-dark: #081018;
+  --neon-glow-color: #58f5ff;
+  --bg-noise-opacity: 0.04;
+}
+
+/* =============================
+   2. THEME LAYOUT HELPERS
+   (background noise, scanlines, global neon pulse)
+   ============================= */
+
+/* subtle fullscreen noise layer to give texture */
+.body-noise::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><rect width="8" height="8" fill="black" opacity="0.02"/></svg>');
+  opacity: var(--bg-noise-opacity, 0.05);
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+
+/* scanlines (fast subtle) */
+.scanlines::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(transparent 80%, rgba(255,255,255,0.01) 81%);
+  background-size: 100% 4px;
+  z-index: 2;
+}
+
+/* =============================
+   3. GLITCH EFFECT (text & blocks)
+   ============================= */
+.glitch {
+  position: relative;
+  display: inline-block;
+  color: var(--techno-primary);
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* pseudo layers for chromatic offset */
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.glitch::before {
+  color: var(--techno-secondary);
+  transform: translate(var(--glitch-strength), calc(-1 * var(--glitch-strength)));
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  animation: glitchBefore var(--tempo-slow) infinite linear;
+}
+
+.glitch::after {
+  color: var(--techno-accent);
+  transform: translate(calc(-1 * var(--glitch-strength)), var(--glitch-strength));
+  mix-blend-mode: screen;
+  opacity: 0.8;
+  animation: glitchAfter calc(var(--tempo-slow) * 1.25) infinite linear;
+}
+
+@keyframes glitchBefore {
+  0% { clip-path: inset(0 0 80% 0); transform: translate(2px,-2px); }
+  20% { clip-path: inset(0 0 20% 0); transform: translate(-3px,1px); }
+  40% { clip-path: inset(20% 0 50% 0); transform: translate(1px,-1px); }
+  60% { clip-path: inset(60% 0 10% 0); transform: translate(-2px,2px); }
+  80% { clip-path: inset(10% 0 30% 0); transform: translate(3px,-2px); }
+  100% { clip-path: inset(0 0 80% 0); transform: translate(2px,-2px); }
+}
+
+@keyframes glitchAfter {
+  0% { clip-path: inset(70% 0 0 0); transform: translate(-2px,2px); }
+  25% { clip-path: inset(30% 0 40% 0); transform: translate(2px,-1px); }
+  50% { clip-path: inset(0 0 60% 0); transform: translate(-3px,1px); }
+  75% { clip-path: inset(40% 0 10% 0); transform: translate(1px,-2px); }
+  100% { clip-path: inset(70% 0 0 0); transform: translate(-2px,2px); }
+}
+
+/* small utility to set data-text automatically if missing */
+.glitch:not([data-text])::before,
+.glitch:not([data-text])::after { display:none; }
+
+/* =============================
+   4. LASER LINES (section trigger)
+   ============================= */
+.laser-section { position: relative; overflow: hidden; }
+.laser-section::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: 10px;
+  width: 120%;
+  height: var(--laser-height);
+  background: linear-gradient(90deg, transparent, var(--neon-glow-color), transparent);
+  transform: translateX(-120%);
+  opacity: 0;
+  z-index: 5;
+}
+.laser-active::before {
+  animation: laserSweep 900ms cubic-bezier(.2,.9,.3,1) forwards;
+  opacity: 1;
+}
+@keyframes laserSweep {
+  0% { transform: translateX(-120%); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateX(120%); opacity: 0.9; }
+}
+
+/* =============================
+   5. FREQUENCY / BARS VISUALS
+   ============================= */
+.frequency-bars { display:flex; gap: 6px; align-items:end; }
+.freq-bar {
+  width: 6px; background: var(--techno-primary);
+  border-radius: 2px;
+  height: 12px;
+  transform-origin: bottom center;
+  animation: freqPulse var(--tempo-mid) infinite ease-in-out;
+}
+.freq-bar:nth-child(2) { animation-duration: calc(var(--tempo-mid) * 1.1); }
+.freq-bar:nth-child(3) { animation-duration: calc(var(--tempo-mid) * 0.85); }
+.freq-bar:nth-child(4) { animation-duration: calc(var(--tempo-mid) * 1.3); }
+
+@keyframes freqPulse {
+  0% { height: 10px; transform: scaleY(1); }
+  50% { height: 44px; transform: scaleY(4.2); }
+  100% { height: 10px; transform: scaleY(1); }
+}
+
+/* give a randomized look with different heights */
+.freq-bar { animation-iteration-count: infinite; }
+
+/* =============================
+   6. NEON GLOW / PULSE
+   ============================= */
+.neon { filter: drop-shadow(0 0 calc(var(--neon-glow-size) * 1px) var(--neon-glow-color)); }
+.neon-pulse { animation: neonPulse 2.5s ease-in-out infinite; }
+@keyframes neonPulse {
+  0%,100% { filter: drop-shadow(0 0 6px var(--neon-glow-color)); }
+  50% { filter: drop-shadow(0 0 28px var(--neon-glow-color)); }
+}
+
+/* =============================
+   7. STROBE HOVER
+   ============================= */
+.strobe { padding: .9rem 1.4rem; border-radius: 6px; background: transparent; border: 1px solid rgba(255,255,255,0.06); cursor: pointer; }
+.strobe:hover { animation: strobeEffect 120ms steps(1) infinite; }
+@keyframes strobeEffect { 0%{ filter:brightness(1.6); } 50%{ filter:brightness(.6); } 100%{ filter:brightness(1.6); } }
+
+/* =============================
+   8. PARALLAX VIDEO
+   ============================= */
+.parallax-container { width: 100%; max-width: 1000px; height: 360px; overflow:hidden; border-radius:8px; border:1px solid rgba(255,255,255,0.04); }
+.parallax-video { width: 100%; height: auto; transform-origin: center; will-change: transform; transition: transform 200ms linear; }
+
+/* =============================
+   9. SCANLINES, NOISE, CHROMA ABERRATION
+   ============================= */
+/* small chroma frame around an element for that LED panel look */
+.chroma {
+  position: relative;
+}
+.chroma::before { /* red offset */
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  transform: translate(2px, -2px);
+  filter: blur(2px);
+  opacity: .65; background: var(--techno-secondary);
+}
+.chroma::after { /* cyan offset */
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  transform: translate(-2px, 2px); filter: blur(6px); opacity:.45; background: var(--techno-primary);
+}
+
+/* subtle moving noise overlay */
+.noise-layer {
+  position: absolute; inset: 0; pointer-events: none; z-index: 40;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><filter id="f"><feTurbulence baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23f)" opacity="0.03" fill="black"/></svg>');
+  opacity: var(--bg-noise-opacity, 0.05);
+  mix-blend-mode: multiply;
+}
+
+/* =============================
+   10. GRID & CIRCUIT BACKGROUNDS
+   ============================= */
+.techno-grid {
+  background-image:
+    linear-gradient(transparent 0 calc(100% - 1px), rgba(255,255,255,0.02) 100%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0 1px, transparent 1px var(--grid-gutter)),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0 1px, transparent 1px var(--grid-gutter));
+  background-size: cover;
+  animation: gridFloat 10s linear infinite;
+}
+@keyframes gridFloat { from { background-position: 0 0; } to { background-position: 200px 200px; } }
+
+/* circuit-lines variant (more tech) */
+.circuit-grid {
+  background: radial-gradient(ellipse at top left, rgba(88,245,255,0.04), transparent 20%), var(--techno-dark);
+}
+
+/* =============================
+   11. EXTRA EFFECTS (shake, wobble, stamp)
+   ============================= */
+.warped {
+  display:inline-block; transform-origin:center; animation: warp 6s infinite linear;
+}
+@keyframes warp { 0%{ transform: skewX(0) } 50%{ transform: skewX(2deg) } 100%{ transform: skewX(0) } }
+
+.stamp { position:relative; display:inline-block; padding:.4rem .6rem; border:1px dashed rgba(255,255,255,0.06); }
+.stamp::after { content:'LIVE'; position:absolute; right:-10px; top:-10px; font-weight:900; font-size:.7rem; color:var(--techno-accent); transform:rotate(10deg); opacity:.9; }
+
+/* =============================
+   12. ACCESSIBILITY + REDUCED MOTION
+   ============================= */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+/* =============================
+   13. CONTROL PANEL (mini UI)
+   ============================= */
+.control-panel {
+  position: fixed; right: 18px; top: 18px; width: var(--panel-width);
+  background: rgba(6,6,6,0.65); border:1px solid rgba(255,255,255,0.04);
+  padding: 1rem; border-radius: 10px; z-index: 9999; backdrop-filter: blur(6px);
+  display:flex; flex-direction:column; gap:.6rem; color:#fff; font-size:14px;
+}
+.control-panel h3 { margin:0; font-size:1rem; }
+.control-panel select, .control-panel button { width:100%; padding:.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:#fff }
+
+/* =============================
+   14. THEME-SPECIFIC TUNING (optional tiny tweaks)
+   ============================= */
+html[data-theme="industrial-rust"] .demo-box { background: linear-gradient(180deg, rgba(30,25,20,0.6), rgba(10,8,6,0.4)); border-color: rgba(255,150,70,0.12); }
+html[data-theme="neon-cyberwave"] .demo-box { background: linear-gradient(180deg, rgba(4,0,18,0.6), rgba(12,0,40,0.4)); border-color: rgba(0,240,255,0.12); }
+
+/* =============================
+   15. UTILITY CLASSES
+   ============================= */
+.center { display:flex; align-items:center; justify-content:center; }
+.absolute-cover { position:absolute; inset:0; }
+.hide { display:none !important; }
+
+/* EOF */

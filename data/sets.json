@@ -1,0 +1,20 @@
+[
+  {
+    "type": "soundcloud",
+    "title": "NEPTUNE — Live at Warehouse (Set)",
+    "uploaded_at": "2025-10-04T20:00:00Z",
+    "stream_url": "https://api.soundcloud.com/tracks/123456789/stream"
+  },
+  {
+    "type": "youtube",
+    "title": "NEPTUNE — Extended Live Set | Rave Night",
+    "uploaded_at": "2025-11-01T18:00:00Z",
+    "videoId": "YOUTUBE_VIDEO_ID_1"
+  },
+  {
+    "type": "file",
+    "title": "NEPTUNE — Promo Mix",
+    "uploaded_at": "2025-09-01T12:00:00Z",
+    "file_url": "/media/audio/promo_mix.mp3"
+  }
+]

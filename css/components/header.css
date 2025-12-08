@@ -1,0 +1,156 @@
+/* ==========================================================================
+   HEADER / HERO SECTION
+   ========================================================================== */
+
+header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  color: var(--text-main);
+  font-family: var(--font-body);
+}
+
+header video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  filter: brightness(85%) contrast(105%);
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+header div {
+  position: relative;
+  z-index: 1;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  gap: var(--space-lg);
+}
+
+/* ==========================================================================
+   LOGO ANIMATION
+   ========================================================================== */
+
+header img {
+  width: clamp(300px, 35vw, 320px);
+  height: auto;
+
+  filter: drop-shadow(0 0 25px var(--accent-primary));
+  animation: logoFade 2.2s ease-out both;
+}
+
+@keyframes logoFade {
+  from {
+    opacity: 0;
+    transform: scale(0.6) rotate(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(2deg);
+  }
+}
+
+/* ==========================================================================
+   CTA BUTTON — LASER BORDER
+   ========================================================================== */
+
+header button {
+  position: relative;
+
+  background: transparent;
+  border: none;
+
+  padding: 0.9rem 2.2rem;
+  cursor: pointer;
+
+  font-family: var(--font-headline);
+  font-size: var(--font-size-md);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-md);
+
+  color: var(--accent-primary);
+  border-radius: 0;
+
+  transform: rotate(2deg);
+  overflow: hidden;
+
+  transition: all var(--transition-fast);
+}
+
+header button::before,
+header button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-primary),
+    var(--accent-secondary),
+    transparent
+  );
+
+  background-size: 200% 100%;
+  opacity: 0.8;
+
+  animation: laserMove 2.5s linear infinite;
+}
+
+header button::before {
+  top: 0;
+}
+header button::after {
+  bottom: 0;
+}
+
+header button:hover {
+  color: var(--text-light);
+  transform: rotate(-2deg) scale(1.35);
+}
+
+@keyframes laserMove {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* weicher Übergang nach unten */
+header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 25vh; /* wie viel Fade – kannst du tunen */
+  pointer-events: none;
+  z-index: 1;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.6) 60%,
+    rgba(0,0,0,1) 100%
+  );
+}

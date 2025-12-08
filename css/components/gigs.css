@@ -1,0 +1,265 @@
+/* ===== Upcoming Gigs Section ===== */
+#next-gigs {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  gap: 0.1rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  color: white;
+
+  /* Basis Hintergrund */
+  background: url("/media/img/84.jpg") center/contain no-repeat;
+}
+
+/* Bild 250px nach unten verlängern */
+#next-gigs::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -350px;  /* Bild künstlich nach unten erweitern */
+  height: 650px;   /* gleiche Höhe */
+  background: url("/media/img/84.jpg") center/cover no-repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+
+/* Fade oben + unten */
+#next-gigs::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 3;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 0%,      /* oben schwarz */
+    rgba(0,0,0,0) 20%,     /* transparent in der Mitte */
+    rgba(0,0,0,0) 80%,     /* transparent */
+    rgba(0,0,0,1) 100%     /* unten schwarz */
+  );
+}
+
+/* Responsive Gaps */
+@media (max-width: 468px) { #next-gigs { gap: 1.1rem; } }
+@media (max-width: 386px) { #next-gigs { gap: 0.7rem; } }
+
+/* Gig List */
+.gig-list {
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  max-height: 3000px; /* dynamisch per JS */
+}
+
+/* ===== Individual Gig ===== */
+.gig {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 700px;
+  margin: 1.7rem auto 1.8rem auto;
+  padding: 1rem;
+  padding-top:1.5rem;
+
+  /* Glas-Overlay Effekt */
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  
+  opacity: 1;
+  transition: all 0.4s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gig {
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.gig::before,
+.gig::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.gig::before {
+  top: 0;
+  transform: translateX(-100%);
+}
+
+.gig::after {
+  bottom: 0;
+  transform: translateX(100%);
+}
+
+.gig:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--accent-primary) 15%, transparent);
+}
+
+.gig:hover::before,
+.gig:hover::after {
+  opacity: 1;
+  animation: laser-scan 1.4s linear infinite;
+}
+
+@keyframes laser-scan {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Visible / Hidden */
+.gig.visible { opacity: 1; transform: translateY(0); }
+.gig.hidden { display: none; }
+
+/* ===== Date Column ===== */
+.date {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  margin-right: 14px;
+  margin-left: -10px;
+  font-family: var(--font-headline);
+  font-weight: 400;
+  text-align: center;
+  color: var(--accent-primary);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  padding: 8px;
+}
+@media (max-width: 386px) { .date { width: 50px; } }
+
+.date span:nth-child(1) { font-size: 2.7rem; font-weight: 800; line-height: 2.5rem; }
+.date span:nth-child(2) { font-size: 1.6rem; line-height: 2rem; color: #fff; }
+.date span:nth-child(3) { font-size: 1.1rem; font-weight: 400; line-height: 1rem; color: #fff; }
+
+/* ===== Info Column ===== */
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 0.5rem;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  padding-bottom: 0.25rem;
+}
+
+.info h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0 0;
+  transition: all 0.3s ease;
+}
+@media (max-width: 468px) { .info h3 { font-size: 1.2rem; width: 98%; } }
+
+.info p {
+  width: 70%;
+  font-size: var(--font-size-base);
+  color: var(--accent-primary);
+    padding-top: 6px;
+    margin-bottom: 10px;
+  display: inline-block;
+  border-top: 1px solid rgba(255,255,255,0.3);
+}
+@media (max-width: 468px) { .info p { line-height: var(--line-height-sm); width:80%} }
+@media (max-width: 648px) { .info p { width: 100%; } }
+
+
+
+
+/* ===== Ticket Button ===== */
+.ticket-button {
+  display: block;
+  padding: 0.6rem 1rem;
+  background-color: var(--accent-primary);
+  color: #fff;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+@media (min-width: 468px) { .ticket-button { position: absolute; margin-top:10px; bottom: 15px; right: 10px; width: 170px; margin-left: auto; } }
+@media (min-width: 648px) { .ticket-button { bottom: 40px; margin: 0; width: 140px; margin-right:10px;} }
+
+.ticket-button:hover {
+  background: #fff;
+  color: var(--accent-primary);
+  transform: scale(1.05) rotate(-1deg);
+}
+
+/* ===== Fade Overlay ===== */
+.fade-overlay {
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #111);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ===== Show More Button ===== */
+.more-events {
+  color: var(--accent-primary);
+  background: transparent;
+  border: 1px solid var(--accent-primary);
+  padding: 14px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 200px;
+  margin: 2.5rem auto 0;
+  transition: all 0.2s ease;
+    font-weight: 900;
+}
+.more-events:hover {
+  /* background: #fff; */
+  color: #fff;
+  font-weight: 900;
+  transform: rotate(-2deg) scale(1.04);
+}
+
+/* Initialzustand für Fade-In */
+.gig {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Wenn im Viewport sichtbar */
+.gig {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.gig.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}

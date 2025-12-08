@@ -1,0 +1,37 @@
+/* techno-effects.css
+   Minimal, but powerful: CSS classes für visuelle Reaktionen beim Section-Enter.
+*/
+.section-pulse {
+  position: relative;
+  overflow: visible;
+}
+
+.section-pulse::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background: radial-gradient(closest-side, rgba(255,20,65,0.06), rgba(0,0,0,0));
+  opacity:0;
+  transform: scale(.98);
+  transition: opacity .48s ease, transform .6s cubic-bezier(.2,.9,.2,1);
+}
+
+.section-pulse.active::after {
+  opacity:1;
+  transform: scale(1.02);
+}
+
+/* Subtle glitch lines */
+.section-glitch .glitch-line {
+  position:absolute;
+  left:0; right:0;
+  height:2px;
+  background:linear-gradient(90deg, transparent, rgba(223,10,73,0.14), transparent);
+  mix-blend-mode:screen;
+  opacity:0;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .4s ease;
+}
+.section-glitch.active .glitch-line { opacity:1; transform: translateY(0); }

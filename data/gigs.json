@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2025-11-21",
+    "name": "Buchbusch Festival",
+    "location": "Pforzheim",
+    "tickets": "https://buchbusch.de/tickets/"
+  },
+  {
+    "date": "2025-12-13",
+    "name": "VOTRE X SYNTHASIA",
+    "location": "MIETLOFT, Kirchheim unter Teck",
+    "tickets": "#"
+  },
+  {
+    "date": "2025-12-20",
+    "name": "KARREE /W JASMIN BLUST",
+    "location": "KARREE, Freiburg",
+    "tickets": "https://www.universe.com/events/jasmin-blust-tickets-S4LM7X"
+  },
+  {
+    "date": "2025-12-31",
+    "name": "PROTON SILVESTER RAVE",
+    "location": "PROTON THE CLUB, Stuttgart",
+    "tickets": "https://proton-the-club.ticket.io/tkXteHDf/wga0ht/"
+  }
+]

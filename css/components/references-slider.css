@@ -1,0 +1,21 @@
+/* references-slider.css
+   Infinite horizontal ticker: duplicate content in JS to make it seamless.
+*/
+.img-ticker {
+  display:flex;
+  gap:22px;
+  align-items:center;
+  will-change:transform;
+  animation: tickerAnim linear infinite;
+  padding: 10px 0;
+  margin-top:5rem;
+}
+.img-ticker .tickerlogo { height:48px; width:auto; object-fit:contain; filter:grayscale(0.06) contrast(1.02); opacity:0.95; }
+
+@keyframes tickerAnim {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* JS setzt richtige Dauer abhängig von width */
+}
+
+/* container to clip overflow */
+#references { overflow:hidden; }

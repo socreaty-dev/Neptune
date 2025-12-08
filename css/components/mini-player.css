@@ -1,0 +1,76 @@
+/* mini-player.css
+   Sticky mini-music-player styling.
+   Ziel: dezent, high-end, white-on-dark micro-UI, bottom-right sticky.
+*/
+
+#mini-player-root {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1200;
+  pointer-events: auto;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue";
+}
+
+.mini-player {
+  background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.85));
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 280px;
+  max-width: 420px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  backdrop-filter: blur(6px);
+}
+
+/* Controls */
+.mini-player-controls {
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.mp-btn {
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.06);
+  color:#fff;
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  font-size:16px;
+  transition:transform .12s ease, background .12s ease;
+}
+.mp-btn:active { transform: scale(.96); }
+
+/* Meta text */
+.mini-player-meta { display:flex; flex-direction:column; line-height:1; overflow:hidden; }
+.mp-title { font-size:13px; font-weight:600; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; color:#fff; }
+.mp-date { font-size:11px; opacity:0.72; color:#ffffff; margin-top:2px; }
+
+/* YouTube container hidden by default, appears overlay when needed */
+.mp-yt-container {
+  position: absolute;
+  right: calc(100% + 12px);
+  bottom: 0;
+  width: 360px;
+  height: 200px;
+  display:none;
+  border-radius:12px;
+  overflow:hidden;
+  background:#000;
+  box-shadow: 0 8px 34px rgba(0,0,0,0.6);
+}
+.mp-yt-container.active { display:block; }
+
+/* Responsive adjustments */
+@media (max-width:480px){
+  #mini-player-root { right: 12px; left: 12px; bottom: 12px; }
+  .mini-player { min-width: auto; width: calc(100% - 24px); max-width: none; }
+  .mp-yt-container { display:none; }
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPTUNE - TECHNO DJ</title>
+
+    <!-- Include Master CSS & JS files -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+
+    <script type="module" src="js/main.js" defer></script>
+
+  <!-- THREE.js (muss zuerst geladen werden!) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+  <!-- VANTA.GLOBE -->
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.globe.min.js"></script>
+<script >
+    window.addEventListener("DOMContentLoaded", () => {
+VANTA.GLOBE({
+  el: "#vanta-bg",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 0.4,
+  scaleMobile: 0.8,
+  color: 0xdf0a49,
+  backgroundColor: 0x000000,
+  size: 1.70
+})
+    });
+</script>
+
+</head>
+
+<body>
+    <!-- 1 HERO SECTION -->
+    <header id="top">
+        <video autoplay muted loop playsinline>
+            <source src="media/video/Neptune-Techno-DJ-compressed.mp4" type="video/mp4">
+            Dein Browser unterstützt kein HTML5-Video.
+        </video>
+        <div>
+            <img src="media/img/neptune_logo.png" alt="Neptune Logo">
+            <button onclick="scrollToSection('next-gigs')">Enter The Rave</button> 
+                 
+            <!-- GET IN TOUCH -->
+             <!-- JOIN THE JOURNEY -->
+        </div>
+             <!-- <button class="techno-button" onclick="scrollToSection('next-gigs')">LETS CONNECT</button>  -->
+    </header>
+
+        <!-- 2 NEXT GIGS -->
+    <section id="next-gigs" >
+        <h2 class="headline">Upcoming Gigs</h2>
+        <div id="gig-list" class="gig-list"></div>
+<div style="display:flex;flex-direction: column;gap: 3rem;";>
+        <button id="showNextGigs" class="more-events techno-button" style="display:none;">MORE EVENTS</button>
+        <!-- <a href="#about-me"><button class="techno-button more-events" onclick="scrollToSection('img-ticker')">CONNECT</button></a> -->
+        </div>
+    </section>
+
+
+
+<section id="references">
+  <div class="img-ticker-wrapper">
+    <div class="img-ticker" id="img-ticker">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/festival_airpark.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/festival_Singularity.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/event_ikarus.jpg">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/club_proton_suttgart.webp">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/club_hans_bunte.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/club_cocomo_ulm.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/events_buchbusch.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/halle_02.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/events_loa.avif">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/club_a8_saarbrücken.jpg">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/basement_club_schwetzingen.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/club_blockhaus_haslach.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/club_circle.gif">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/club_drifters_freiburg.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/club_heimat_basel.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/club_kulturfabrik_albstadt.jpg">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/club_lux.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/club_mensch_meier.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/club_wonders_stuttgart.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/event_affenkäfig.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/event_better_times.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/event_totentanz.jpg">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/lemon_beat_club_markdorf2.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/musikpark_heilbronn2.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/universal_dog_lahr.png">
+      <img class="tickerlogo" src="media/img/references_NEPTUNE/event_rave_tram_ulm.jpg">
+
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- 4 ABOUT -->
+    <section id="about-me">
+         <h2 class="headline" style="color:#000; padding-bottom:1rem;">LETS CONNECT!</h2>
+        <div class="about" id="vanta-bg">
+              
+            <div class="about-image">
+                <img src="media/img/about_neptune.png" alt="NEPTUNE DJ" />
+            </div>
+
+            <div class="about-text">
+                <!-- Social Media Icons -->
+                <div class="social-icons social-arc">
+                    <a href="https://soundcloud.com/neptune-techno-dj" target="_blank"><img
+                            src="media/img/icons/soundcloud.png" alt="SoundCloud" /></a>
+                    <a href="https://www.youtube.com/channel/UCW71GVV-CShJeq3bGjmQKrw" target="_blank"><img
+                            src="media/img/icons/youtube.png" alt="YouTube" /></a>
+                    <a href="https://www.instagram.com/neptunetechnodj/" target="_blank"><img
+                            src="media/img/icons/instagram.png" alt="Instagram" /></a>
+                    <a href="mailto:kontakt@neptune.dj" target="_blank"><img src="media/img/icons/email.png"
+                            alt="E-Mail" /></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- 5 INSTAGRAM LIVE FEED -->
+    </section id="instagram">
+    <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-f2ac5821-f7dc-4051-a9cc-400588dffd89" data-elfsight-app-lazy></div>
+    </section>
+
+
+
+    <!-- 6  Footer -->
+<footer id="footer">
+    <div class="footer-inner">
+
+        <!-- LEFT: LOGO + TAGLINE -->
+        <div class="footer-col">
+            <img src="media/img/neptune_logo.png" alt="Neptune Logo" class="footer-logo">
+            <p class="footer-tagline">Techno • Rave • Darkness</p>
+        </div>
+
+        <!-- CENTER: BOOKING -->
+        <div class="footer-col">
+            <h3>Booking & Contact</h3>
+            <p>kontakt@neptune.dj</p>
+            <p>Management: Neptune Agency</p>
+        </div>
+
+        <!-- RIGHT: LINKS -->
+        <div class="footer-col">
+            <h3>Legal</h3>
+            <a href="#">Impressum</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+        <span>© 2025 NEPTUNE</span>
+        <button id="scrollTop" class="scroll-top-btn" onclick="scrollToSection('top')">▲</button>
+    </div>
+</footer>
+
+
+<!-- Sticky Play / Stop Button -->
+<div id="sticky-play-button">
+  <button id="play-soundcloud">
+    <span id="icon">♪</span>
+  </button>
+</div>
+
+<!-- SoundCloud iframe, versteckt -->
+<iframe id="sc-player" width="1" height="1" scrolling="no" frameborder="no" allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https://soundcloud.com/neptune-techno-dj">
+</iframe>
+
+
+</body>
+
+</html>

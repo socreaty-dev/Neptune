@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark-void">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hardtechno Effect Showcase</title>
+
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/techno-components.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&family=Bruno+Ace+SC&family=Exo+2:wght@100..900&family=Teko:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <script type="module" defer src="js/main.js"></script>
+    <script type="module" defer src="js/techno-components.js"></script>
+</head>
+<body>
+
+    <!-- ============================= -->
+    <!-- FIXED CONTROL PANEL FOR THEMES -->
+    <!-- ============================= -->
+    <aside id="controlPanel" class="control-panel">
+        <h3>Style Switcher</h3>
+        <label>Theme:</label>
+        <select id="themeSelect"></select>
+
+        <label>Font:</label>
+        <select id="fontSelect"></select>
+
+        <button id="resetTheme">Reset</button>
+    </aside>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main id="contentWrapper">
+
+        <!-- SECTION 1: GLITCH EFFECT -->
+        <section class="section-block" id="sec-glitch">
+            <h1 class="glitch">Glitch Headline</h1>
+            <p>Ein klassischer Cyberpunk / Hardtechno Glitch Effekt.</p>
+            <div class="demo-box glitch">GLITCH BOX</div>
+        </section>
+
+        <!-- SECTION 2: LASER LINES -->
+        <section class="section-block techno-grid" id="sec-laser">
+            <h1 class="headline">Laser Line Activation</h1>
+            <p>Hier fährt ein Laser über die Section, sobald sie sichtbar wird.</p>
+            <div class="demo-box">LASER SAMPLE</div>
+        </section>
+
+        <!-- SECTION 3: FREQUENCY BARS -->
+        <section class="section-block" id="sec-frequency">
+            <h1 class="headline">Frequency Bars</h1>
+            <p>Hardtechno Bass Visualisierung.</p>
+            <div class="frequency-bars">
+                <div class="freq-bar"></div>
+                <div class="freq-bar"></div>
+                <div class="freq-bar"></div>
+                <div class="freq-bar"></div>
+                <div class="freq-bar"></div>
+                <div class="freq-bar"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: NEON GLOW -->
+        <section class="section-block techno-grid" id="sec-neon">
+            <h1 class="neon-pulse">Neon Pulse</h1>
+            <p>Ein pulsierender Neon-Effekt wie auf Festival LED Walls.</p>
+            <img src="media/img/neon_logo.png" class="neon" width="200" />
+        </section>
+
+        <!-- SECTION 5: STROBE BUTTON -->
+        <section class="section-block" id="sec-strobe">
+            <h1 class="headline">Strobe Hover</h1>
+            <p>Ein kurzer Strobe-Blitz auf Hover.</p>
+            <button class="strobe">HARDTECHNO ENERGY</button>
+        </section>
+
+        <!-- SECTION 6: PARALLAX VIDEO -->
+        <section class="section-block parallax" id="sec-parallax">
+            <h1 class="headline">Parallax Hero Video</h1>
+            <p>Scrolle und sieh, wie das Video sich anders bewegt.</p>
+            <div class="parallax-container">
+                <video autoplay muted loop playsinline class="parallax-video">
+                    <source src="media/video/Neptune-Techno-DJ-compressed.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <!-- Additional Effects Placeholder -->
+        <section class="section-block" id="sec-more-effects">
+            <h1 class="headline">Mehr Hardtechno Effekte folgen</h1>
+            <p>Alle Effekte dynamisch geladen.</p>
+        </section>
+
+    </main>
+
+</body>
+</html>
