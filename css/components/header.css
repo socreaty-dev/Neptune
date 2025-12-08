@@ -85,7 +85,7 @@ header button {
   color: var(--accent-primary);
   border-radius: 0;
 
-  transform: rotate(2deg);
+  transform: rotate(2deg), translateY(-250px);
   overflow: hidden;
 
   transition: all var(--transition-fast);
