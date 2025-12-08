@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 :root {
   /* === BASE COLORS === */
   --bg-main: #0a0a0a;        /* Tiefes Schwarz für Club-Feeling */
@@ -67,7 +67,7 @@ h1, h2, .headline {
 h2 {
   font-size: var(--font-size-xl);
   letter-spacing: var(--letter-spacing-md);
-=======
+}
 /*───────────────────────────────────────────────
  🎨 01. VARIABLES — Theme & globale Settings
 ───────────────────────────────────────────────
@@ -104,5 +104,5 @@ h2 {
   --accent: #ff3b00;
   --accent-2: #009cd9;
   --glow: 0 0 6px color-mix(in srgb, var(--accent-2) 60%, transparent);
->>>>>>> bd74492b5f042936f7459451023cb6ae672d5464
+
 }
