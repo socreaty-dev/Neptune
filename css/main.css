@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 @import url("./variables.css");
@@ -155,3 +156,22 @@ header button, .techno-button {
             transform-origin: top;
   }
 }
+=======
+/*───────────────────────────────────────────────
+ 🌑 NEPTUNE CSS FRAMEWORK
+───────────────────────────────────────────────
+ Struktur:
+  01. Variables   → Farben, Typo, Theme (Dark/Light)
+  02. Base        → Grundelemente & Reset
+  03. Layout      → Container, Header, Footer
+  04. Components  → Buttons, Hero, Gallery etc.
+  05. Helpers     → Kleine Utilities
+───────────────────────────────────────────────*/
+
+/* Importiere alles zentral — nur diese Datei kommt ins HTML */
+@import url('variables.css');
+@import url('base.css');
+@import url('layout.css');
+@import url('components.css');
+@import url('helpers.css');
+>>>>>>> bd74492b5f042936f7459451023cb6ae672d5464

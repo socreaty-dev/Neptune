@@ -1,0 +1,23 @@
+/* 01-variables.css — theme variables for dark (default) + light */
+:root {
+  --font-base: 'Inter', system-ui, sans-serif;
+  --radius: 1rem;
+  --transition: 0.3s ease;
+  /* Dark theme colors */
+  --bg: #0b0b0d;
+  --panel: #121218;
+  --text: #e8f0fa;
+  --muted: #8a8f9a;
+  --accent: #ff4300;
+  --accent-2: #00caff;
+  --glow: 0 0 10px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+:root[data-theme='light'] {
+  --bg: #fafbff;
+  --panel: #ffffff;
+  --text: #0c0c12;
+  --muted: #555b66;
+  --accent: #ff3b00;
+  --accent-2: #009cd9;
+  --glow: 0 0 6px color-mix(in srgb, var(--accent-2) 60%, transparent);
+}

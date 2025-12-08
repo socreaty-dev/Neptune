@@ -1,0 +1,20 @@
+/*───────────────────────────────────────────────
+ ⚙️ 05. HELPERS — Spacing, Textstyles, Flex-Shortcuts
+───────────────────────────────────────────────*/
+
+.mt-1 { margin-top: .5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
