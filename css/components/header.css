@@ -35,11 +35,9 @@ header div {
   display: flex;
   flex-direction: column;
 
-  justify-content:center;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
-  margin-top: 300px;
-
 }
 
 /* ==========================================================================
