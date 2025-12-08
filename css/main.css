@@ -1,30 +1,16 @@
-<<<<<<< HEAD
+/* Base */
+@import url("variables.css");
+@import url("reset.css");
+@import url("layout.css");
 
-
-@import url("./variables.css");
-@import url("./reset.css");
-
-@import url("./layout.css");
-
-
-@import url("./components/header.css");
-
-@import url("./components/gigs.css");
-/* @import url("./components/references-slider.css"); */
-@import url("./components/references.css");
-
-@import url("./components/about.css");
-
-@import url("./components/footer.css");
-
-/* @import url("./components/techno-components.css"); */
-    
-
-/* @import url("./components/sections.css"); */
-@import url("./components/techno-effects.css");
-
-@import url("./components/image-slider.css");
-
+/* Components */
+@import url("components/header.css");
+@import url("components/gigs.css");
+@import url("components/references.css");
+@import url("components/about.css");
+@import url("components/footer.css");
+@import url("components/techno-effects.css");
+@import url("components/image-slider.css");
 
 
 #soundcloud-widget {
@@ -156,7 +142,7 @@ header button, .techno-button {
             transform-origin: top;
   }
 }
-=======
+
 /*───────────────────────────────────────────────
  🌑 NEPTUNE CSS FRAMEWORK
 ───────────────────────────────────────────────
@@ -169,9 +155,8 @@ header button, .techno-button {
 ───────────────────────────────────────────────*/
 
 /* Importiere alles zentral — nur diese Datei kommt ins HTML */
-@import url('variables.css');
-@import url('base.css');
-@import url('layout.css');
-@import url('components.css');
-@import url('helpers.css');
->>>>>>> bd74492b5f042936f7459451023cb6ae672d5464
+@import url("variables.css");
+@import url("base.css");
+@import url("layout.css");
+@import url("components.css");
+@import url("helpers.css");
