@@ -16,7 +16,7 @@
 }
 
 /* Fade oben + unten */
-#about-me::after {
+.vanta-canvas::after {
   content: '';
   position: absolute;
   left: 0;
